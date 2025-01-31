@@ -1,3 +1,3 @@
-##Create a weather API program using AWS Lambda
+## Create a weather API program using AWS Lambda
 
 **Update me!**
