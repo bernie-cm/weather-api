@@ -5,13 +5,13 @@ import taosrest
 
 
 def open_connection():
-    # Establiash a connection to TDEngine cloud.
-    # Open a try except block
-    # Except when connection fails
-        # Print the error
-
-    # Return the connection object
-    pass
+    # Establish a connection to TDEngine cloud
+    # Use the token and URL provided in the instance
+    try:
+        connection = taosrest.connect(url="https://gw.us-west-2.aws.cloud.tdengine.com", token="fd76c35cada42f1d0ac0001b91f2959c883cbcd6")
+    except Exception as e:
+        print(str(e))
+    return connection
 
 def get_weather_data(location, connection):
     # Set up API call
