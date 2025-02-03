@@ -47,7 +47,7 @@ def main():
 
     # Get data from the weather API
     # Use Brisbane as the location
-    get_weather_data('Brisbane', connection)
+    get_weather_data('brisbane', connection)
 
     # Close connection
     close_connection(connection)
