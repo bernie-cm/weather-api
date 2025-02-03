@@ -36,7 +36,7 @@ def get_weather_data(location, connection):
     current['last_updated'] = origin_time.strftime('%Y-%m-%dT%H:%M:%SZ')
 
     # Call write_weather to write data to TDEngine
-    write_weather(location, current, connection)
+    TODO: write_weather(location, current, connection)
 
 def close_connection(connection):
     connection.close()
