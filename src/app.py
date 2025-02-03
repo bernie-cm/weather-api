@@ -38,9 +38,6 @@ def get_weather_data(location, connection):
     # Call write_weather to write data to TDEngine
     write_weather(location, current, connection)
 
-
-
-
 def close_connection(connection):
     connection.close()
 
@@ -49,7 +46,8 @@ def main():
     connection = open_connection()
 
     # Get data from the weather API
-    get_weather_data()
+    # Use Brisbane as the location
+    get_weather_data('Brisbane', connection)
 
     # Close connection
     close_connection(connection)
