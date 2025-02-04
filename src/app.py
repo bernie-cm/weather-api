@@ -16,7 +16,7 @@ def open_connection():
 def get_weather_data(location, connection):
     # Set up API call
     payload = {
-        "key": "",
+        "key": "3f78a34c643945b0a46113444250102",
         "q": location,
         "aqi": "yes"        # Provides Air Quality Index
     }
@@ -25,7 +25,6 @@ def get_weather_data(location, connection):
 
     # Extract the JSON from the response variable
     response_string = response.json()
-
     # Take only the current part of the JSON
     current = response_string['current']
 
@@ -39,9 +38,8 @@ def get_weather_data(location, connection):
     write_weather(location, current, connection)
 
 def write_weather(location, weather_json, connection):
-    pass
-
-
+    joined_location = location.replace(" ", "")
+    connection.query(f"insert into weather.{joined_location} values ('{weather_json['last_updated']}', {weather_json['temp_c']}, {weather_json['temp_f']}, {weather_json['wind_mph']}, {weather_json['wind_kph']})")
 
 def close_connection(connection):
     connection.close()
