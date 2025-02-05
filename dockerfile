@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # Copy in the source code
 COPY ./src/app.py /src/app.py
 
-CMD ["python","./src/app.py"]
+ENTRYPOINT ["python3","./src/app.py"]
